@@ -3,18 +3,27 @@ require 'pry'
 class String
 
   def sentence?
-    
+    if self.include?('.') then true
+    else
+      false
+    end
   end
 
   def question?
-
+    if self.end_with?('?') then true
+    else
+      false
+    end
   end
 
   def exclamation?
-
+    if self.end_with?('!') then true
+    else
+      false
+    end
   end
 
   def count_sentences
-
+    self.split(/\.|\?|!/).filter {|sentence| !sentence.empty?}.count
   end
 end
